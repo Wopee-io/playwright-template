@@ -24,7 +24,7 @@ if (process.env.VIEWPORT) {
     .split("x")
     .map(Number);
   projectsConfig.push({
-    name: `${browser} (custom viewport)`,
+    name: "Custom viewport",
     use: {
       ...devices[browser],
       viewport: { width, height },
@@ -42,7 +42,7 @@ if (process.env.VIEWPORT) {
     browserType = null;
 
   projectsConfig.push({
-    name: `${deviceKey}${browser ? ` (${browserType})` : ""}`,
+    name: "Wopee device",
     use: {
       ...device,
       ...(browserType && {
@@ -53,9 +53,9 @@ if (process.env.VIEWPORT) {
   });
 } else {
   projectsConfig.push({
-    name: `${browser} (default)`,
-    use: { 
-      ...devices[browser], 
+    name: "Default browser",
+    use: {
+      ...devices[browser],
       headless: true,
     },
   });
